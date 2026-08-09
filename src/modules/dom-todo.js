@@ -33,6 +33,16 @@ function createTodoItem(todo) {
     
     const checkbox = document.createElement('input')
     checkbox.type = 'checkbox'
+    checkbox.checked = todo.completed
+
+    if (todo.completed) {
+        todoItem.classList.add('checked')
+    }
+
+    checkbox.addEventListener('change', () => {
+        todo.completed = checkbox.checked
+        todoItem.classList.toggle('checked')
+    })
     
     const title = document.createElement('h2')
     title.textContent = todo.title

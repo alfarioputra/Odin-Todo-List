@@ -189,6 +189,12 @@ html, body {
     gap: 12px;
 }
 
+.todo-item.checked {
+    background-color: #3a3a3a7e;
+    text-decoration: line-through;
+    color: #ffffff7e;
+}
+
 .todo-item {
     max-width: 650px;
     height: 70px;
@@ -196,7 +202,7 @@ html, body {
     align-items: center;
     padding-inline: 20px;
     padding-block: 0.5rem;
-    background-color: rgba(245, 245, 245, 0.172);
+    background-color: #F5F5F52c;
     border-radius: 8px;
     cursor: pointer;
 }
