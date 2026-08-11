@@ -3,14 +3,17 @@ import { getSelectedProject } from "./project.js";
 
 let todos = []
 
-function createTodo({ title, description, dueDate, priority, notes} ) {
+function createTodo({ title, description, dueDate, priority, notes }) {
     const project = getSelectedProject()
 
-    const todo = new Todo(title, description, dueDate, priority, notes, project)
+    const projectName = project ? project.name : "default"
+
+    const todo = new Todo(title, description, dueDate, priority, notes, projectName)
 
     todos.push(todo)
 
     if (project) project.todos.push(todo)
+        
 }
 
 function getTodos() {

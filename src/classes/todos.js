@@ -1,5 +1,5 @@
 export default class Todo {
-    constructor(title, description, dueDate, priority, notes, project) {
+    constructor(title, description, dueDate, priority, notes, project = "default" ) {
         this.id = crypto.randomUUID()
         this.title = title
         this.description = description

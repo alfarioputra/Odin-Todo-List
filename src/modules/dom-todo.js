@@ -107,7 +107,7 @@ function renderTodos(project = null) {
     myTodos.innerHTML = ''
 
     const filteredTodos = project
-        ? todos.filter(todo => todo.project === project)
+        ? project.todos
         : todos
 
     filteredTodos.forEach(todo => {
