@@ -1,5 +1,5 @@
 import Todo from "../classes/todos.js";
-import { getSelectedProject } from "./project.js";
+import { getSelectedProject, getProjects } from "./project.js";
 
 let todos = []
 
@@ -21,7 +21,23 @@ function getTodos() {
 }
 
 function deleteTodos(id) {
+    const todo = todos.find(todo => todo.id === id)
+
+    if (!todo) return
+
     todos = todos.filter(todo => todo.id !== id)
+
+    console.log(todo.project)
+
+    if (todo.project !== 'default') {
+        const project = getProjects()
+            .find(project => project.name === todo.project)
+
+        if (project) {
+            project.todos = project.todos
+                .filter(todo => todo.id !== id)
+        }
+    }
 }
 
 function editTodos(todo, data) {
