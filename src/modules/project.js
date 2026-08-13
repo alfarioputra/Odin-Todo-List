@@ -27,6 +27,10 @@ function deleteProject(name) {
 
 function editProject(project,newName) {
     project.name = newName
+
+    project.todos.forEach(todo => {
+        todo.project = newName
+    })
 }
 
 export { setSelectedProject, getSelectedProject, createProject, getProjects, deleteProject, editProject }

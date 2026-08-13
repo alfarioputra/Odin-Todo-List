@@ -109,7 +109,8 @@ function renderTodos(project = null) {
     const filteredTodos = project
         ? project.todos
         : todos
-
+console.log(todos)
+console.log(project)
     filteredTodos.forEach(todo => {
         const todoElement = createTodoItem(todo)
         myTodos.appendChild(todoElement)
