@@ -1,4 +1,5 @@
 import Project from "../classes/Projects.js"
+import { getTodos } from "./todo.js"
 
 let projects = []
 let selectedProject = null
@@ -28,8 +29,14 @@ function deleteProject(name) {
 function editProject(project,newName) {
     project.name = newName
 
-    project.todos.forEach(todo => {
-        todo.project = newName
+    const todos = getTodos()
+
+    project.todos.forEach(id => {
+        const todo = todos.find(todo => todo.id === id)
+
+        if (todo) {
+            todo.project = newName
+        }
     })
 }
 

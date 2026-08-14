@@ -12,7 +12,7 @@ function createTodo({ title, description, dueDate, priority, notes }) {
 
     todos.push(todo)
 
-    if (project) project.todos.push(todo)
+    if (project) project.todos.push(todo.id)
         
 }
 
@@ -34,8 +34,7 @@ function deleteTodos(id) {
             .find(project => project.name === todo.project)
 
         if (project) {
-            project.todos = project.todos
-                .filter(todo => todo.id !== id)
+            project.todos = project.todos.filter(todoId => todoId !== id)
         }
     }
 }

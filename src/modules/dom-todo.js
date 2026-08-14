@@ -108,9 +108,10 @@ function renderTodos(project = null) {
 
     const filteredTodos = project
         ? project.todos
+            .map(id => todos.find(todo => todo.id === id))
+            .filter(Boolean)
         : todos
-console.log(todos)
-console.log(project)
+
     filteredTodos.forEach(todo => {
         const todoElement = createTodoItem(todo)
         myTodos.appendChild(todoElement)
