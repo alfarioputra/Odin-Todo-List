@@ -159,11 +159,11 @@ function setUpTodosForm() {
         e.preventDefault()
         
         const todoInput = {
-            title: title.value,
-            description: description.value,
+            title: title.value.trim(),
+            description: description.value.trim(),
             dueDate: date.value,
             priority: priority.value,
-            notes: notes.value
+            notes: notes.value.trim()
         }
 
         if (!todoInput) return
