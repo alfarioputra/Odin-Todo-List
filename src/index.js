@@ -3,7 +3,6 @@ import { renderProjects, setupProjectForm } from "./modules/dom-project.js"
 import { setUpTodosForm, renderTodos } from "./modules/dom-todo.js"
 import { setSelectedProject } from "./modules/project.js"
 import { loadData } from "./modules/storage.js"
-import { loadTodos } from "./modules/todo.js"
 
 const sideBar = document.querySelector('.side-bar')
 
