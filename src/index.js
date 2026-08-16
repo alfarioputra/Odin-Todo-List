@@ -1,7 +1,9 @@
 import "./styles.css"
-import { setupProjectForm } from "./modules/dom-project.js"
+import { renderProjects, setupProjectForm } from "./modules/dom-project.js"
 import { setUpTodosForm, renderTodos } from "./modules/dom-todo.js"
 import { setSelectedProject } from "./modules/project.js"
+import { loadData } from "./modules/storage.js"
+import { loadTodos } from "./modules/todo.js"
 
 const sideBar = document.querySelector('.side-bar')
 
@@ -28,3 +30,7 @@ allTask.addEventListener('click', () => {
 
 setupProjectForm()
 setUpTodosForm()
+
+loadData()
+renderTodos()
+renderProjects()

@@ -2,6 +2,7 @@ import editImg from '../assets/edit.svg'
 import delImg from '../assets/delete.svg'
 import { createTodo, getTodos, editTodos, deleteTodos } from './todo.js'
 import { getSelectedProject } from './project.js'
+import { saveData } from './storage.js'
 
 const myTodos = document.getElementById('todos')
 const newTask = document.getElementById('new-task')
@@ -42,6 +43,8 @@ function createTodoItem(todo) {
     checkbox.addEventListener('change', () => {
         todo.completed = checkbox.checked
         todoItem.classList.toggle('checked')
+
+        saveData()
     })
     
     const title = document.createElement('h2')
@@ -84,6 +87,9 @@ function createTodoItem(todo) {
 
     del.addEventListener('click', () => {
         deleteTodos(todo.id)
+
+        saveData()
+        
         renderTodos(getSelectedProject())
     })
 
@@ -173,6 +179,8 @@ function setUpTodosForm() {
         } else {
             createTodo(todoInput)
         }
+
+        saveData()
 
         renderTodos(getSelectedProject())
 

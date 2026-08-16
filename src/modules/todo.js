@@ -1,5 +1,6 @@
 import Todo from "../classes/todos.js";
 import { getSelectedProject, getProjects } from "./project.js";
+import { saveData } from "./storage.js";
 
 let todos = []
 
@@ -27,8 +28,6 @@ function deleteTodos(id) {
 
     todos = todos.filter(todo => todo.id !== id)
 
-    console.log(todo.project)
-
     if (todo.project !== 'default') {
         const project = getProjects()
             .find(project => project.name === todo.project)
@@ -46,4 +45,10 @@ function editTodos(todo, data) {
     todo.priority = data.priority
 }
 
-export { createTodo, getTodos, deleteTodos, editTodos }
+function loadTodos(data) {
+    todos = data
+
+    console.log(data)
+}
+
+export { createTodo, getTodos, deleteTodos, editTodos, loadTodos }

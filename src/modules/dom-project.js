@@ -2,6 +2,7 @@ import editImg from '../assets/edit.svg'
 import deleteImg from '../assets/delete.svg'
 import { setSelectedProject, createProject, getProjects, deleteProject, editProject } from './project.js'
 import { renderTodos } from './dom-todo.js'
+import { saveData } from './storage.js'
 
 const myProjects = document.getElementById('my-projects')
 const newBtn = document.querySelector('#new-project')
@@ -43,6 +44,8 @@ function createProjectItem(project) {
         e.stopPropagation()
 
         deleteProject(project.name)
+
+        saveData()
 
         renderProjects()
     })
@@ -103,6 +106,8 @@ function setupProjectForm() {
         } else {
             createProject(projectName)
         }
+
+        saveData()
         
         renderProjects()
         
@@ -114,4 +119,4 @@ function setupProjectForm() {
     })
 }
 
-export { setupProjectForm }
+export { setupProjectForm, renderProjects }

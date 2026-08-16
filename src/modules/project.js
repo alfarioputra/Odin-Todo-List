@@ -40,4 +40,8 @@ function editProject(project,newName) {
     })
 }
 
-export { setSelectedProject, getSelectedProject, createProject, getProjects, deleteProject, editProject }
+function loadProjects(data) {
+    projects = data
+}
+
+export { setSelectedProject, getSelectedProject, createProject, getProjects, deleteProject, editProject, loadProjects }
