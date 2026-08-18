@@ -23,6 +23,20 @@ function getProjects() {
 }
 
 function deleteProject(name) {
+    const project =  projects.find(project => project.name === name)
+    
+    if (!project) return
+
+    const todos =  getTodos()
+
+    project.todos.forEach(id => {
+        const todo = todos.find(todo => todo.id === id)
+
+        if (todo) {
+            todo.project = 'default'
+        }
+    })
+
     projects = projects.filter(project => project.name !== name)
 }
 
