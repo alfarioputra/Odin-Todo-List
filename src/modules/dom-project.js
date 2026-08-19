@@ -57,8 +57,6 @@ function createProjectItem(project) {
         setSelectedProject(project)
         
         renderTodos(project)
-
-        console.log(project)
     })
 
     return projectElement

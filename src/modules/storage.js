@@ -18,8 +18,6 @@ function loadData() {
 
     loadProjects(parsedData.projects)
     loadTodos(parsedData.todos)
-
-    console.log(parsedData)
 }
 
 export { saveData, loadData }

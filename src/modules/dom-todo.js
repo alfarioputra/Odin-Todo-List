@@ -188,12 +188,10 @@ function setUpTodosForm() {
     })
 
     cancel.addEventListener('click', () => {
-        console.log('btn clicked')
         closeForm()
     })
 
     close.addEventListener('click', () => {
-        console.log('btn clicked')
         closeForm()
     })
 }

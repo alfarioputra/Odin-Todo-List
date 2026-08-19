@@ -1,7 +1,6 @@
 import Todo from "../classes/todos.js";
 import { getSelectedProject, getProjects } from "./project.js";
 
-
 let todos = []
 
 function createTodo({ title, description, dueDate, priority, notes }) {
@@ -47,8 +46,6 @@ function editTodos(todo, data) {
 
 function loadTodos(data) {
     todos = data
-
-    console.log(data)
 }
 
 export { createTodo, getTodos, deleteTodos, editTodos, loadTodos }
